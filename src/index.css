@@ -1,0 +1,59 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-glow-blue: rgba(59, 130, 246, 0.35);
+  --color-glow-purple: rgba(168, 85, 247, 0.35);
+  --color-glow-pink: rgba(236, 72, 153, 0.25);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-black font-sans text-zinc-100 antialiased;
+  }
+
+  ::selection {
+    @apply bg-purple-500/40 text-white;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply outline-none ring-2 ring-purple-500/80 ring-offset-2 ring-offset-black;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
+  }
+
+  .glass-panel {
+    @apply rounded-[1.75rem] border border-white/[0.08] bg-white/[0.04] shadow-[0_0_0_1px_rgba(255,255,255,0.03)_inset] backdrop-blur-xl;
+  }
+
+  .glass-pill {
+    @apply rounded-full border border-white/10 bg-white/5 backdrop-blur-md;
+  }
+
+  .glow-ring {
+    box-shadow:
+      0 0 0 1px rgba(168, 85, 247, 0.35),
+      0 0 40px rgba(59, 130, 246, 0.15),
+      0 0 80px rgba(168, 85, 247, 0.1);
+  }
+
+  .section-pad {
+    @apply px-4 py-24 sm:px-6 lg:px-8;
+  }
+}
