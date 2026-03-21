@@ -1,7 +1,7 @@
 export const personal = {
   name: 'Heemal Syangbo',
   initials: 'HS',
-  headline: 'Web Developer · Full-Stack (Student)',
+  headline: 'Full-Stack Developer · Modern Web Apps',
   location: 'Toronto, ON, Canada',
   phone: '437-221-0644',
   education: {
