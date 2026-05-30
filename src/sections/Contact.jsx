@@ -44,7 +44,7 @@ export function Contact() {
       <SectionHeading
         gradient={false}
         title="Contact"
-        subtitle="Open to internship and junior software developer opportunities in the GTA or remote. Feel free to connect via email, phone, LinkedIn, or GitHub below."
+        subtitle="Open to junior software developer opportunities in the GTA or remote. Feel free to connect via email, phone, LinkedIn, or GitHub below."
       />
 
       <motion.div

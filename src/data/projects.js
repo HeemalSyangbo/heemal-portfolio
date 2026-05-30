@@ -10,7 +10,7 @@ export const projects = [
     number: '01',
     title: 'DriveTree — Capstone Project',
     description:
-      'In progress: building a full-stack platform with React, Node.js, and REST APIs to connect learners with driving mentors. Developing frontend components and backend services with database integration, collaborating with a team to design, implement, and test features iteratively.',
+      'Completed full-stack platform built with React, Node.js, and REST APIs to connect learners with driving mentors. Developed frontend components and backend services with database integration, collaborating with a team to design, implement, and test features iteratively from proposal through final delivery.',
     image:
       'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&q=80&auto=format&fit=crop',
     imageAlt: 'Driving and road theme — visual placeholder for DriveTree capstone',

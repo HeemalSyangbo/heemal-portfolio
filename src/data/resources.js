@@ -27,7 +27,7 @@ export const resourceCategories = [
       {
         id: 'cover',
         title: 'Cover letter guide',
-        description: 'Outline for internship and junior applications.',
+        description: 'Outline for junior developer applications.',
         icon: 'mail',
         action: 'modal',
         modalContent:

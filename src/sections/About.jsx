@@ -49,7 +49,7 @@ export function About() {
       <SectionHeading
         gradient={false}
         title="About"
-        subtitle="Student developer in Toronto — full-stack coursework, capstone work, and clear framing of junior-level depth."
+        subtitle="Graduate developer in Toronto — full-stack coursework, completed capstone, and clear framing of junior-level depth."
       />
 
       <div className="mx-auto mt-14 grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-start">
