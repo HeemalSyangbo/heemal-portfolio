@@ -10,15 +10,15 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 pb-24 pt-28 sm:px-6 lg:px-8"
+      className="relative z-10 flex min-h-[calc(100vh-5rem)] flex-col items-center justify-center px-4 pb-10 pt-24 sm:px-6 lg:px-8"
     >
       <motion.div
         initial={{ opacity: 0, y: 28 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="glass-panel relative w-full max-w-xl px-6 py-10 text-center shadow-2xl shadow-blue-500/10 sm:px-10"
+        className="glass-panel relative w-full max-w-xl px-6 py-8 text-center shadow-2xl shadow-blue-500/10 sm:px-9"
       >
-        <div className="mx-auto mb-6 flex justify-center">
+        <div className="mx-auto mb-4 flex justify-center">
           <div className="relative isolate aspect-square w-[clamp(7rem,32vw,9.25rem)] shrink-0">
             {/* Ambient glow behind avatar */}
             <div
@@ -54,30 +54,20 @@ export function Hero() {
         <p className="mt-3 text-sm font-medium tracking-wide text-emerald-300/90">
           {personal.heroStatus}
         </p>
-        <div className="mx-auto mt-4 max-w-sm text-left">
-          <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500">Open to:</p>
-          <ul className="mt-2 space-y-1">
-            {personal.heroOpenRoles.map((role) => (
-              <li key={role} className="flex items-center gap-2 text-sm text-zinc-300">
-                <span className="text-zinc-500" aria-hidden>
-                  •
-                </span>
-                {role}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <p className="mt-4 text-sm text-zinc-500">{personal.location}</p>
+        <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-zinc-400">
+          {personal.heroOpenTo}
+        </p>
+        <p className="mt-3 text-sm text-zinc-500">{personal.location}</p>
 
-        <p className="mt-5 text-sm font-medium tracking-wide text-zinc-300 sm:text-base">
+        <p className="mt-4 text-sm font-medium tracking-wide text-zinc-300 sm:text-base">
           {personal.heroTechStack}
         </p>
 
-        <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-zinc-300 sm:text-base">
+        <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-zinc-300 sm:text-base">
           {personal.heroIntro}
         </p>
 
-        <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:justify-center">
+        <div className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:justify-center">
           <button
             type="button"
             onClick={() => scrollTo('projects')}
@@ -96,7 +86,7 @@ export function Hero() {
           </button>
         </div>
 
-        <div className="mt-8 flex justify-center gap-3">
+        <div className="mt-6 flex justify-center gap-3">
           <a
             href={personal.github}
             target="_blank"
@@ -131,7 +121,7 @@ export function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.6 }}
         onClick={() => scrollTo('about')}
-        className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.3em] text-zinc-500"
+        className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.3em] text-zinc-500"
       >
         Scroll to explore
         <span className="block h-8 w-px bg-gradient-to-b from-zinc-500 to-transparent" />

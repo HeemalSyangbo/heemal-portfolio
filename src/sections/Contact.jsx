@@ -40,7 +40,7 @@ const cards = [
 
 export function Contact() {
   return (
-    <section id="contact" className="section-pad relative z-10 scroll-mt-24 pb-28">
+    <section id="contact" className="section-pad relative z-10 scroll-mt-24 pb-16">
       <SectionHeading
         gradient={false}
         title="Contact"
@@ -52,24 +52,21 @@ export function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="mx-auto mt-12 max-w-4xl"
+        className="mx-auto mt-10 max-w-4xl"
       >
         <div className="glass-panel p-6 sm:p-8">
-          <p className="mb-2 text-center text-sm leading-relaxed text-zinc-300 sm:text-base">
+          <p className="mb-6 text-center text-sm leading-relaxed text-zinc-300 sm:text-base">
             Available for Junior Software Developer, Full-Stack Developer, Frontend Developer, QA
             Analyst, Application Support, and IT Support opportunities across Canada.
           </p>
-          <p className="mb-6 text-center text-xs text-zinc-500">
-            Available across Canada for full-time opportunities.
-          </p>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid auto-rows-fr gap-4 sm:grid-cols-2">
             {cards.map((c) => (
               <a
                 key={c.title}
                 href={c.href}
                 target={c.external ? '_blank' : undefined}
                 rel={c.external ? 'noreferrer noopener' : undefined}
-                className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br p-5 ring-1 ring-white/10 transition hover:brightness-110 ${c.className}`}
+                className={`group flex h-full min-h-[8.5rem] flex-col justify-between overflow-hidden rounded-2xl bg-gradient-to-br p-5 ring-1 ring-white/10 transition hover:brightness-110 ${c.className}`}
               >
                 <c.icon className="mb-3 h-8 w-8 text-white/95" strokeWidth={1.5} />
                 <h3 className="text-lg font-bold text-white">{c.title}</h3>

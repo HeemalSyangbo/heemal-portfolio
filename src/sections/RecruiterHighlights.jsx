@@ -5,8 +5,8 @@ import { SectionHeading } from '../components/SectionHeading'
 
 export function RecruiterHighlights() {
   return (
-    <section id="highlights" className="section-pad relative z-10 scroll-mt-24">
-      <div className="mx-auto max-w-6xl space-y-12">
+    <section id="highlights" className="section-pad relative z-10 scroll-mt-24 pb-8">
+      <div className="mx-auto max-w-6xl space-y-8">
         <div>
           <SectionHeading
             gradient={false}
@@ -19,7 +19,7 @@ export function RecruiterHighlights() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="glass-panel mx-auto mt-10 grid max-w-4xl gap-3 p-6 sm:grid-cols-2 sm:gap-x-8 sm:p-8"
+            className="glass-panel mx-auto mt-8 grid max-w-4xl gap-3 p-5 sm:grid-cols-2 sm:gap-x-8 sm:p-6"
           >
             {developerSnapshot.map((item) => (
               <li key={item} className="flex items-center gap-3 text-sm text-zinc-200 sm:text-base">

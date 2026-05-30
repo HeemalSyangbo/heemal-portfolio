@@ -120,7 +120,7 @@ export function About() {
         subtitle={personal.aboutSubtitle}
       />
 
-      <div className="mx-auto mt-14 grid max-w-6xl gap-6 lg:grid-cols-2 lg:items-stretch lg:gap-8">
+      <div className="mx-auto mt-10 grid max-w-6xl gap-6 lg:grid-cols-2 lg:items-stretch lg:gap-8">
         <motion.div
           initial={{ opacity: 0, x: -16 }}
           whileInView={{ opacity: 1, x: 0 }}

@@ -20,7 +20,7 @@ export function Experience() {
         subtitle="Education, capstone delivery, and professional experience—including transferable leadership from prior roles."
       />
 
-      <div className="relative mx-auto mt-16 max-w-3xl">
+      <div className="relative mx-auto mt-10 max-w-3xl">
         <div className="absolute left-[21px] top-2 bottom-2 w-px bg-gradient-to-b from-blue-500/50 via-purple-500/50 to-pink-500/40 md:left-[25px]" />
 
         <ul className="space-y-10">

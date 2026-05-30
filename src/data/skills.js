@@ -23,7 +23,7 @@ export const skillCategories = [
   },
   {
     id: 'foundations',
-    title: 'Web Foundations',
+    title: 'Tools & Foundations',
     accent: 'from-purple-500/80 to-fuchsia-500/60',
     icon: 'server',
     secondary: true,

@@ -1,5 +1,4 @@
 import { Background } from './components/Background'
-import { FloatingNav } from './components/FloatingNav'
 import { Footer } from './components/Footer'
 import { Navbar } from './components/Navbar'
 import { ScrollToTop } from './components/ScrollToTop'
@@ -28,7 +27,6 @@ export default function App() {
       </a>
       <Background />
       <Navbar activeId={activeId} />
-      <FloatingNav activeId={activeId} />
       <main id="main">
         <Hero />
         <About />

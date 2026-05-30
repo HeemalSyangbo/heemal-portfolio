@@ -77,6 +77,15 @@ export function Portfolio() {
       )
     }
 
+    if (item.action === 'capstone') {
+      return (
+        <button type="button" onClick={() => setCapstoneOpen(true)} className={primaryBtn}>
+          <FolderOpen className="h-3.5 w-3.5" aria-hidden />
+          Browse PDFs
+        </button>
+      )
+    }
+
     return (
       <a
         href={item.href}
@@ -117,15 +126,15 @@ export function Portfolio() {
         subtitle="Résumé, credentials, GitHub, LinkedIn, and DriveTree capstone documentation—prioritized for recruiter review."
       />
 
-      <div className="mx-auto mt-14 max-w-6xl space-y-16">
+      <div className="mx-auto mt-10 max-w-6xl space-y-10">
         <div>
           <h3 className="mb-2 text-center text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
             Featured documents
           </h3>
-          <p className="mx-auto mb-8 max-w-2xl text-center text-sm leading-relaxed text-zinc-400">
-            Essential hiring materials—résumé and official academic credentials.
+          <p className="mx-auto mb-6 max-w-2xl text-center text-sm leading-relaxed text-zinc-400">
+            Résumé, academic credentials, and DriveTree capstone documentation.
           </p>
-          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {featuredDocuments.map((item, i) => renderDocumentCard(item, i))}
           </div>
         </div>
@@ -134,7 +143,7 @@ export function Portfolio() {
           <h3 className="mb-2 text-center text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
             Additional resources
           </h3>
-          <p className="mx-auto mb-8 max-w-2xl text-center text-sm leading-relaxed text-zinc-400">
+          <p className="mx-auto mb-6 max-w-2xl text-center text-sm leading-relaxed text-zinc-400">
             Professional summary and direct links recruiters review most often.
           </p>
           <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -144,21 +153,17 @@ export function Portfolio() {
 
         <div id="achievements" className="scroll-mt-28">
           <h3 className="mb-2 text-center text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
-            Credentials & background
+            Transferable experience
           </h3>
-          <p className="mx-auto mb-10 max-w-2xl text-center text-sm leading-relaxed text-zinc-400">
-            Academic PDFs and a concise summary of prior non-software roles (details also appear under
-            Experience).
+          <p className="mx-auto mb-6 max-w-2xl text-center text-sm leading-relaxed text-zinc-400">
+            Prior leadership roles with skills relevant to software collaboration (see Experience).
           </p>
-          <div className="space-y-16">
+          <div className="space-y-10">
             {achievementSections.map((block) => (
               <div key={block.id}>
-                <h4 className="mb-1 text-center text-base font-semibold text-zinc-100">{block.title}</h4>
-                <p className="mb-6 text-center text-sm text-zinc-500">{block.subtitle}</p>
                 <div className="grid gap-4 sm:grid-cols-2">
                   {block.items.map((row, i) => {
                     const Icon = achievementIconMap[row.icon] || Award
-                    const isPdf = row.href.endsWith('.pdf')
                     return (
                       <motion.article
                         key={row.id}
@@ -166,7 +171,7 @@ export function Portfolio() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.04 }}
-                        className="glass-panel flex flex-col p-6"
+                        className="glass-panel flex h-full min-h-[11.5rem] flex-col p-6"
                       >
                         <Icon className="mb-3 h-7 w-7 text-amber-300" strokeWidth={1.6} />
                         <h5 className="text-lg font-semibold text-white">{row.title}</h5>
@@ -176,65 +181,18 @@ export function Portfolio() {
                         <p className="mt-3 flex-1 text-sm leading-relaxed text-zinc-400">
                           {row.description}
                         </p>
-                        {isPdf ? (
-                          <a
-                            href={row.href}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            className="mt-5 inline-flex items-center justify-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2.5 text-xs font-semibold text-emerald-200 transition hover:bg-emerald-500/20"
-                          >
-                            <ExternalLink className="h-3.5 w-3.5" />
-                            View PDF
-                          </a>
-                        ) : (
-                          <a
-                            href={row.href}
-                            className="mt-5 inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-4 py-2.5 text-xs font-semibold text-zinc-200 transition hover:bg-white/[0.1]"
-                          >
-                            View in timeline
-                          </a>
-                        )}
+                        <a
+                          href={row.href}
+                          className="mt-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-4 py-2.5 pt-4 text-xs font-semibold text-zinc-200 transition hover:bg-white/[0.1]"
+                        >
+                          View in timeline
+                        </a>
                       </motion.article>
                     )
                   })}
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        <div>
-          <h3 className="mb-2 text-center text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
-            DriveTree capstone library
-          </h3>
-          <p className="mx-auto mb-8 max-w-xl text-center text-sm leading-relaxed text-zinc-400">
-            Single location for all DriveTree (team T06) project documents—from proposal through
-            final reports.
-          </p>
-          <div className="flex justify-center">
-            <motion.button
-              type="button"
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              onClick={() => setCapstoneOpen(true)}
-              className="glass-panel group flex w-full max-w-md flex-col items-center gap-4 rounded-2xl p-8 text-center transition hover:border-white/15 hover:bg-white/[0.04]"
-            >
-              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-500/30 to-purple-600/40 ring-1 ring-white/10">
-                <FolderOpen className="h-7 w-7 text-pink-200" strokeWidth={1.5} aria-hidden />
-              </span>
-              <div>
-                <span className="block text-lg font-semibold text-white">Capstone document library</span>
-                <span className="mt-2 block text-sm text-zinc-400">
-                  Complete documentation including project vision, requirements, system design, wireframes,
-                  and progress reports.
-                </span>
-              </div>
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-6 py-2.5 text-sm font-semibold text-zinc-200 transition group-hover:border-white/20 group-hover:bg-white/[0.08]">
-                Browse all PDFs
-                <ExternalLink className="h-4 w-4 opacity-90" aria-hidden />
-              </span>
-            </motion.button>
           </div>
         </div>
       </div>

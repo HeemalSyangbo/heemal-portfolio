@@ -27,6 +27,23 @@ function ProjectImage({ project, className = '' }) {
   )
 }
 
+function GitHubButton({ href, compact = false }) {
+  const btnBase = compact ? 'text-xs px-3 py-1.5' : 'text-sm px-4 py-2'
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer noopener"
+      className={`inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] font-medium text-zinc-300 transition hover:border-white/20 hover:text-white ${btnBase}`}
+    >
+      <Github className="h-4 w-4" aria-hidden />
+      GitHub
+      <ExternalLink className="h-3.5 w-3.5 opacity-60" aria-hidden />
+      <span className="sr-only">(opens in new tab)</span>
+    </a>
+  )
+}
+
 function ProjectActions({ project, compact = false }) {
   const btnBase = compact ? 'text-xs px-3 py-1.5' : 'text-sm px-4 py-2'
 
@@ -43,41 +60,21 @@ function ProjectActions({ project, compact = false }) {
           <ExternalLink className="h-3.5 w-3.5 opacity-90" aria-hidden />
           <span className="sr-only">(opens in new tab)</span>
         </a>
-        <a
-          href={project.links.github}
-          target="_blank"
-          rel="noreferrer noopener"
-          className={`inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] font-medium text-zinc-300 transition hover:border-white/20 hover:text-white ${btnBase}`}
-        >
-          <Github className="h-4 w-4" aria-hidden />
-          🐙 GitHub
-          <ExternalLink className="h-3.5 w-3.5 opacity-60" aria-hidden />
-          <span className="sr-only">(opens in new tab)</span>
-        </a>
+        <GitHubButton href={project.links.github} compact={compact} />
       </div>
     )
   }
 
   return (
-    <div className="flex flex-wrap items-center gap-3">
+    <div className="flex flex-wrap items-center gap-2">
       <a
         href={project.links.cta.href}
-        className={`inline-flex items-center gap-2 font-semibold text-white transition hover:text-purple-200 ${compact ? 'text-xs' : 'text-sm'}`}
+        className={`inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] font-medium text-zinc-200 transition hover:border-white/20 hover:bg-white/[0.06] ${btnBase}`}
       >
         {project.links.cta.label}
         <ArrowRight className="h-4 w-4" aria-hidden />
       </a>
-      <a
-        href={project.links.github}
-        target="_blank"
-        rel="noreferrer noopener"
-        className={`inline-flex items-center gap-2 font-medium text-zinc-400 transition hover:text-white ${compact ? 'text-xs' : 'text-sm'}`}
-      >
-        <Github className="h-4 w-4" aria-hidden />
-        GitHub
-        <ExternalLink className="h-3.5 w-3.5 opacity-60" aria-hidden />
-        <span className="sr-only">(opens in new tab)</span>
-      </a>
+      <GitHubButton href={project.links.github} compact={compact} />
     </div>
   )
 }
@@ -309,10 +306,10 @@ export function Projects() {
         subtitle="Featured capstone delivery and supporting full-stack, API, and DevOps work."
       />
 
-      <div className="mx-auto mt-14 max-w-6xl space-y-14">
+      <div className="mx-auto mt-10 max-w-6xl space-y-10">
         {featuredProject ? (
           <div>
-            <h3 className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.25em] text-amber-200/90">
+            <h3 className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.25em] text-amber-200/90">
               Featured Project
             </h3>
             <FeaturedProjectCard project={featuredProject} />
@@ -320,10 +317,10 @@ export function Projects() {
         ) : null}
 
         <div>
-          <h3 className="mb-6 text-center text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+          <h3 className="mb-4 text-center text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
             Other Projects
           </h3>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {otherProjects.map((project, index) => (
               <ProjectGridCard key={project.id} project={project} index={index} />
             ))}
@@ -335,7 +332,7 @@ export function Projects() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="mx-auto mt-12 flex justify-center"
+        className="mx-auto mt-8 flex justify-center"
       >
         <a
           href={`${personal.github}?tab=repositories`}

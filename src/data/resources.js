@@ -31,13 +31,21 @@ export const featuredDocuments = [
     href: '/documents/supervised-ml-regression-classification.pdf',
     featured: true,
   },
+  {
+    id: 'drivetree-docs',
+    title: 'DriveTree Documentation',
+    description: 'Capstone artifacts—proposal, design, requirements, and progress reports.',
+    icon: 'folder',
+    action: 'capstone',
+    featured: true,
+  },
 ]
 
 export const supplementalMaterials = [
   {
     id: 'profile',
     title: 'Professional Summary',
-    description: 'Background, projects, and experience for applications and recruiter review.',
+    description: 'Background, projects, and experience for recruiter review.',
     icon: 'user',
     action: 'modal',
     modalContent: personal.extendedProfile,
@@ -64,29 +72,6 @@ export const supplementalMaterials = [
 ]
 
 export const achievementSections = [
-  {
-    id: 'academic',
-    title: 'Academic credentials',
-    subtitle: 'Certificates and official letters—view online.',
-    items: [
-      {
-        id: 'ml-cert',
-        title: 'Supervised machine learning',
-        subtitle: 'Regression & classification (course certificate)',
-        description: 'Certificate in supervised machine learning—regression and classification fundamentals.',
-        href: '/documents/supervised-ml-regression-classification.pdf',
-        icon: 'brain',
-      },
-      {
-        id: 'dean-letter',
-        title: 'Dean’s letter',
-        subtitle: 'George Brown College',
-        description: 'Official academic recognition (PDF).',
-        href: '/documents/dean-letter.pdf',
-        icon: 'award',
-      },
-    ],
-  },
   {
     id: 'prior-roles',
     title: 'Prior professional experience',

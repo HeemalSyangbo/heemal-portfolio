@@ -17,7 +17,7 @@ export function Skills() {
         subtitle="Technical skills grouped by area—frontend, backend, and development tools I use in projects."
       />
 
-      <div className="mx-auto mt-14 grid max-w-6xl gap-6 lg:grid-cols-3">
+      <div className="mx-auto mt-10 grid max-w-6xl gap-6 lg:grid-cols-3">
         {skillCategories.map((cat, i) => {
           const Icon = headerIcons[cat.icon] || Code2
           return (
