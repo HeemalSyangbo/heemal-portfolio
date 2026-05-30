@@ -13,7 +13,7 @@ export function Footer() {
     <footer className="border-t border-white/[0.06] bg-black/40 py-12 backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 sm:flex-row sm:px-6 lg:px-8">
         <p className="text-sm text-zinc-500">
-          © {year} {personal.name}. Crafted for coursework, junior roles, and future opportunities.
+          © {year} {personal.name}. Portfolio showcasing software development projects, technical skills, and professional experience.
         </p>
         <div className="flex items-center gap-3">
           {social.map(({ icon: Icon, href, label }) => (

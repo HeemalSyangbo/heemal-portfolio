@@ -11,41 +11,41 @@ export const resourceCategories = [
       {
         id: 'resume',
         title: 'Résumé',
-        description: 'PDF — update public/documents/resume.pdf when your CV changes.',
+        description: 'View my résumé in the browser—download from the PDF viewer when needed.',
         icon: 'file-text',
-        action: 'download',
+        action: 'view',
         href: '/documents/resume.pdf',
       },
       {
         id: 'profile',
-        title: 'Professional profile',
-        description: 'Full narrative for job forms, recruiters, or LinkedIn About.',
+        title: 'About Me',
+        description: 'Background, projects, and what I bring to junior software roles.',
         icon: 'user',
         action: 'modal',
         modalContent: personal.extendedProfile,
       },
       {
         id: 'cover',
-        title: 'Cover letter guide',
-        description: 'Outline for junior developer applications.',
+        title: 'Sample Cover Letter',
+        description: 'A practical structure for junior developer and IT support applications.',
         icon: 'mail',
         action: 'modal',
         modalContent:
-          '1) Opening — Name the role and organization.\n\n2) Fit — Two or three sentences on your diploma, web stack (React, Node.js, REST), and one concrete project (e.g. capstone or MERN assignment).\n\n3) Proof — Brief example: teamwork, API design, or a lab you are proud of. Keep DevOps/cloud as “coursework exposure” unless you shipped it in production.\n\n4) Close — Link to this portfolio and GitHub; invite a conversation.\n\nExport to PDF from Docs or Word when you apply.',
+          'Opening — State the role and company clearly.\n\nFit — Highlight your Computer Programming & Analysis diploma, React.js/Node.js stack, and one concrete project (DriveTree capstone or MERN employee management system).\n\nProof — Share one specific example: team delivery, API integration, testing, or a technical problem you solved.\n\nClose — Link to this portfolio and GitHub and invite a brief conversation.\n\nExport to PDF from Google Docs or Word when you apply.',
       },
       {
         id: 'philosophy',
-        title: 'Career focus',
-        description: 'How you want to grow as a developer.',
+        title: 'Career Goals',
+        description: 'Where I am headed as a developer and what I want to learn next.',
         icon: 'sparkles',
         action: 'modal',
         modalContent:
-          'I want to write readable, testable code and to learn from code review and mentorship. Short term: contribute to a real codebase as an intern or junior developer. Long term: deepen full-stack delivery and keep building honest depth in cloud and automation—without overstating experience I have not had in production.',
+          'I aim to write clean, maintainable code and grow through mentorship and hands-on delivery on real teams. Near term: contribute as a junior software developer, QA analyst, or application support specialist while building depth in React, Node.js, and REST APIs. Long term: expand full-stack and cloud skills through production experience and continuous learning.',
       },
       {
         id: 'certs-awards',
         title: 'Certificates & recognition',
-        description: 'PDFs including supervised ML certificate and Dean’s letter.',
+        description: 'Official certificates and academic recognition—view PDFs in the credentials section.',
         icon: 'award',
         action: 'anchor',
         href: '#achievements',
@@ -58,13 +58,13 @@ export const achievementSections = [
   {
     id: 'academic',
     title: 'Academic credentials',
-    subtitle: 'Certificates and official letters (PDF).',
+    subtitle: 'Certificates and official letters—view online.',
     items: [
       {
         id: 'ml-cert',
         title: 'Supervised machine learning',
         subtitle: 'Regression & classification (course certificate)',
-        description: 'Academic certificate — introductory ML coursework.',
+        description: 'Certificate in supervised machine learning—regression and classification fundamentals.',
         href: '/documents/supervised-ml-regression-classification.pdf',
         icon: 'brain',
       },
@@ -81,23 +81,23 @@ export const achievementSections = [
   {
     id: 'prior-roles',
     title: 'Prior professional experience',
-    subtitle: 'Non-software roles — leadership and operations.',
+    subtitle: 'Leadership and operations experience before software development.',
     items: [
       {
         id: 'leadership-richelieu',
         title: 'Warehouse associate / team lead',
         subtitle: 'Richelieu Hardware Ltd — Toronto',
         description:
-          'Operations, prioritization, training, and cross-team coordination — transferable to agile delivery and communication in software teams.',
+          'Team leadership, process coordination, training, and cross-department communication—skills applied in collaborative software delivery.',
         href: '#experience',
         icon: 'briefcase',
       },
       {
         id: 'supervisor-dubai',
         title: 'Team supervisor',
-        subtitle: 'The Arbor School — Dubai, UAE',
+        subtitle: 'Education & operations — Dubai, UAE',
         description:
-          'Staff supervision, daily operations, and stakeholder communication — accountability and clarity relevant to collaborative development.',
+          'Staff supervision, scheduling, operations management, and problem-solving across departments—transferable to technical team environments.',
         href: '#experience',
         icon: 'trophy',
       },

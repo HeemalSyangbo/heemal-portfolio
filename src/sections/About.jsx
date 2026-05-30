@@ -5,26 +5,26 @@ import { personal } from '../data/personal'
 
 const stats = [
   {
-    title: 'Featured projects',
-    detail: 'Showcased coursework & capstone',
+    title: 'Key projects',
+    detail: 'Full-stack apps & completed capstone',
     icon: Code2,
     className: 'from-blue-600/30 to-blue-500/10 ring-blue-500/20',
   },
   {
     title: 'Stack focus',
-    detail: 'JavaScript, React, Node, REST, MongoDB',
+    detail: 'JavaScript, React.js, Node.js, REST, MongoDB',
     icon: Layers,
     className: 'from-purple-600/30 to-purple-500/10 ring-purple-500/20',
   },
   {
-    title: 'Academic depth',
-    detail: 'Capstone docs, labs, certificates',
+    title: 'Credentials',
+    detail: 'Diploma, certificates & capstone docs',
     icon: BookOpen,
     className: 'from-orange-500/25 to-amber-500/10 ring-orange-400/20',
   },
   {
     title: 'Collaboration',
-    detail: 'Team projects + prior lead roles',
+    detail: 'Agile teams & prior leadership roles',
     icon: Users,
     className: 'from-emerald-500/25 to-teal-500/10 ring-emerald-400/25',
   },
@@ -49,7 +49,7 @@ export function About() {
       <SectionHeading
         gradient={false}
         title="About"
-        subtitle="Graduate developer in Toronto — full-stack coursework, completed capstone, and clear framing of junior-level depth."
+        subtitle="George Brown College graduate focused on React.js, Node.js, and full-stack delivery—with leadership experience from prior roles."
       />
 
       <div className="mx-auto mt-14 grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-start">

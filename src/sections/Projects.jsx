@@ -14,7 +14,7 @@ export function Projects() {
       <SectionHeading
         id="projects-heading"
         title="Projects"
-        subtitle="Coursework and portfolio builds—honest scope; ask for demos or walkthroughs."
+        subtitle="Hands-on full-stack projects—capstone delivery, MERN applications, API integration, and DevOps labs."
       />
 
       <div className="mx-auto mt-14 grid max-w-6xl gap-8 md:grid-cols-2">

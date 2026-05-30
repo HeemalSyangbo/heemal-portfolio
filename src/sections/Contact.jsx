@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Download, Github, Linkedin, Mail, Phone } from 'lucide-react'
+import { ExternalLink, Github, Linkedin, Mail, Phone } from 'lucide-react'
 import { SectionHeading } from '../components/SectionHeading'
 import { personal } from '../data/personal'
 
@@ -44,7 +44,7 @@ export function Contact() {
       <SectionHeading
         gradient={false}
         title="Contact"
-        subtitle="Open to junior software developer opportunities in the GTA or remote. Feel free to connect via email, phone, LinkedIn, or GitHub below."
+        subtitle="Open to junior software developer, full-stack, QA analyst, application support, and IT support roles in the GTA or remote."
       />
 
       <motion.div
@@ -74,11 +74,12 @@ export function Contact() {
           <div className="mt-8 text-center">
             <a
               href={personal.resumeUrl}
-              download
+              target="_blank"
+              rel="noreferrer noopener"
               className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition hover:brightness-110 sm:w-auto"
             >
-              <Download className="h-4 w-4" />
-              Download my résumé
+              <ExternalLink className="h-4 w-4" />
+              View my résumé
             </a>
           </div>
         </div>

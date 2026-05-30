@@ -17,7 +17,7 @@ export function Experience() {
       <SectionHeading
         gradient={false}
         title="Experience & Education"
-        subtitle="Education, capstone work, professional experience, and prior degree—newest first."
+        subtitle="Education, capstone delivery, and professional experience—including transferable leadership from prior roles."
       />
 
       <div className="relative mx-auto mt-16 max-w-3xl">

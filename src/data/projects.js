@@ -10,11 +10,11 @@ export const projects = [
     number: '01',
     title: 'DriveTree — Capstone Project',
     description:
-      'Completed full-stack platform built with React, Node.js, and REST APIs to connect learners with driving mentors. Developed frontend components and backend services with database integration, collaborating with a team to design, implement, and test features iteratively from proposal through final delivery.',
+      'Completed team capstone delivering a full-stack platform that connects learners with driving mentors. Built responsive React.js interfaces, Node.js REST APIs, and MongoDB integration with iterative Agile delivery—from proposal through final release.',
     image:
       'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&q=80&auto=format&fit=crop',
-    imageAlt: 'Driving and road theme — visual placeholder for DriveTree capstone',
-    tech: ['React', 'Node.js', 'Express', 'REST APIs', 'MongoDB', 'Team collaboration'],
+    imageAlt: 'Driving and road theme — DriveTree capstone project',
+    tech: ['React.js', 'Node.js', 'REST APIs', 'MongoDB', 'Team collaboration', 'Full-stack architecture'],
     links: {
       cta: { href: '#contact', label: 'Discuss this project' },
       github: GH,
@@ -24,13 +24,13 @@ export const projects = [
   {
     id: 'employee-mern',
     number: '02',
-    title: 'Full-Stack Employee Management System',
+    title: 'Employee Management System — MERN Stack',
     description:
-      'MERN stack application for managing employee records: CRUD operations, JWT-based authentication, and file uploads via RESTful APIs. Deployed frontend on Vercel and backend on Render with environment-based configuration; tested endpoints with Postman and MongoDB Atlas.',
+      'Full-stack MERN application with secure CRUD operations for employee records, JWT authentication, protected routes, and file uploads via REST APIs. Deployed the frontend on Vercel and backend on Render with environment-based configuration; integrated MongoDB Atlas and validated endpoints with Postman.',
     image:
       'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80&auto=format&fit=crop',
-    imageAlt: 'Team collaboration — placeholder for employee management system UI',
-    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Multer', 'Vercel', 'Render'],
+    imageAlt: 'Team collaboration — employee management system',
+    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'MERN', 'Vercel', 'Render'],
     links: {
       cta: { href: '#contact', label: 'Discuss this project' },
       github: GH,
@@ -40,13 +40,13 @@ export const projects = [
   {
     id: 'weather',
     number: '03',
-    title: 'Weather Application — Live API',
+    title: 'Weather Application — API Integration',
     description:
-      'Full-stack weather application consuming live external APIs: backend logic to fetch, process, and serve real-time data to the frontend, with deployment and environment configuration.',
+      'Weather application consuming external REST APIs and displaying real-time weather data. Implemented API request handling, asynchronous data fetching, and frontend rendering with debugging and error handling for reliable responses.',
     image:
       'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=1200&q=80&auto=format&fit=crop',
-    imageAlt: 'Clouds and sky — placeholder for weather application',
-    tech: ['JavaScript', 'React', 'REST API', 'Node.js'],
+    imageAlt: 'Clouds and sky — weather application',
+    tech: ['JavaScript', 'React.js', 'REST APIs', 'API Integration'],
     links: {
       cta: { href: '#contact', label: 'Discuss this project' },
       github: GH,
@@ -56,13 +56,13 @@ export const projects = [
   {
     id: 'devops-azure',
     number: '04',
-    title: 'DevOps Cloud Infrastructure & CI/CD',
+    title: 'DevOps & CI/CD — Cloud Infrastructure',
     description:
-      'Cloud-based DevOps environment on Azure Virtual Machines with Ubuntu Linux. Jenkins CI/CD integrated with GitHub; SonarQube with PostgreSQL for static analysis; Docker containers, Linux services, SSH, and Azure network security rules.',
+      'Coursework-based DevOps and CI/CD project on Azure Virtual Machines with Ubuntu Linux. Set up Jenkins pipelines with GitHub workflows, SonarQube static analysis, Docker containers, Linux services, and Azure network security—demonstrating foundational automation and cloud skills.',
     image:
       'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80&auto=format&fit=crop',
-    imageAlt: 'Server room aesthetic — placeholder for DevOps and cloud project',
-    tech: ['Azure', 'Ubuntu', 'Jenkins', 'GitHub', 'Docker', 'SonarQube', 'PostgreSQL'],
+    imageAlt: 'Server infrastructure — DevOps and CI/CD project',
+    tech: ['Azure VM', 'Ubuntu', 'Docker', 'Jenkins', 'SonarQube', 'GitHub Actions'],
     links: {
       cta: { href: '#contact', label: 'Discuss this project' },
       github: GH,

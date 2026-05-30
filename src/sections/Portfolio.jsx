@@ -10,7 +10,6 @@ import {
   Sparkles,
   Trophy,
   User,
-  Download,
 } from 'lucide-react'
 import { useState } from 'react'
 import { Modal } from '../components/Modal'
@@ -43,7 +42,7 @@ export function Portfolio() {
     <section id="portfolio" className="section-pad relative z-10 scroll-mt-24">
       <SectionHeading
         title="Portfolio"
-        subtitle="Résumé, extended profile, capstone documentation, and credentials—everything beyond the homepage summaries."
+        subtitle="Résumé, background, capstone documentation, and credentials—quick access for recruiters and hiring managers."
       />
 
       <div className="mx-auto mt-14 max-w-6xl space-y-20">
@@ -85,10 +84,12 @@ export function Portfolio() {
                     ) : (
                       <a
                         href={item.href}
-                        download
-                        className="mt-4 rounded-full border border-white/10 bg-white/[0.05] px-3 py-2 text-center text-xs font-semibold text-zinc-200 transition hover:bg-white/[0.09]"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="mt-4 inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-3 py-2 text-center text-xs font-semibold text-zinc-200 transition hover:bg-white/[0.09]"
                       >
-                        Download
+                        <ExternalLink className="h-3.5 w-3.5" />
+                        View PDF
                       </a>
                     )}
                   </motion.article>
@@ -137,11 +138,12 @@ export function Portfolio() {
                         {isPdf ? (
                           <a
                             href={row.href}
-                            download
+                            target="_blank"
+                            rel="noreferrer noopener"
                             className="mt-5 inline-flex items-center justify-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2.5 text-xs font-semibold text-emerald-200 transition hover:bg-emerald-500/20"
                           >
-                            <Download className="h-3.5 w-3.5" />
-                            Download PDF
+                            <ExternalLink className="h-3.5 w-3.5" />
+                            View PDF
                           </a>
                         ) : (
                           <a

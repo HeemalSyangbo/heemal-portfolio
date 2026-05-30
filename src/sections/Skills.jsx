@@ -1,8 +1,7 @@
 import { Cloud, Code2, Server } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { SectionHeading } from '../components/SectionHeading'
-import { SkillBar } from '../components/SkillBar'
-import { alsoExperienced, skillCategories } from '../data/skills'
+import { skillCategories } from '../data/skills'
 
 const headerIcons = {
   code: Code2,
@@ -15,7 +14,7 @@ export function Skills() {
     <section id="skills" className="section-pad relative z-10 scroll-mt-24">
       <SectionHeading
         title="Skills"
-        subtitle="Web development first (React, Node.js, REST). DevOps and cloud reflect coursework and labs—not production SRE experience."
+        subtitle="Technical skills grouped by area—frontend, backend, and development tools I use in projects."
       />
 
       <div className="mx-auto mt-14 grid max-w-6xl gap-6 lg:grid-cols-3">
@@ -38,39 +37,20 @@ export function Skills() {
                 </span>
                 <h3 className="text-lg font-semibold text-white">{cat.title}</h3>
               </div>
-              <div className="flex flex-1 flex-col gap-4">
+              <div className="flex flex-1 flex-wrap gap-2">
                 {cat.items.map((skill) => (
-                  <SkillBar key={skill.name} name={skill.name} level={skill.level} variant={cat.id} />
+                  <span
+                    key={skill}
+                    className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-zinc-200 transition hover:border-white/20 hover:bg-white/[0.08]"
+                  >
+                    {skill}
+                  </span>
                 ))}
-              </div>
-              <div className="mt-6 flex items-end justify-between border-t border-white/[0.06] pt-4 text-xs font-semibold uppercase tracking-widest text-zinc-500">
-                <span>Technologies</span>
-                <span className="text-3xl font-bold text-white/90 tabular-nums">{cat.footerNumber}</span>
               </div>
             </motion.article>
           )
         })}
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.45 }}
-        className="mx-auto mt-12 max-w-6xl"
-      >
-        <p className="mb-4 text-center text-sm font-medium text-zinc-400">Also experienced with</p>
-        <div className="glass-panel flex flex-wrap justify-center gap-2 p-5">
-          {alsoExperienced.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-zinc-300"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </motion.div>
     </section>
   )
 }
