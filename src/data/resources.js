@@ -31,44 +31,34 @@ export const featuredDocuments = [
     href: '/documents/supervised-ml-regression-classification.pdf',
     featured: true,
   },
-  {
-    id: 'drivetree-docs',
-    title: 'DriveTree Documentation',
-    description: 'Capstone artifacts—proposal, design, requirements, and reports.',
-    icon: 'folder',
-    action: 'capstone',
-    featured: true,
-  },
 ]
 
 export const supplementalMaterials = [
   {
     id: 'profile',
-    title: 'About Me',
-    description: 'Extended background for applications and LinkedIn.',
+    title: 'Professional Summary',
+    description: 'Background, projects, and experience for applications and recruiter review.',
     icon: 'user',
     action: 'modal',
     modalContent: personal.extendedProfile,
     featured: false,
   },
   {
-    id: 'cover',
-    title: 'Sample Cover Letter',
-    description: 'Full sample letter—customize the opening line for each application.',
-    icon: 'mail',
-    action: 'modal',
-    modalContent:
-      'Dear Hiring Manager,\n\nI am writing to express my interest in a Junior Software Developer role with your team. I graduated in April 2026 from George Brown College with an Advanced Diploma in Computer Programming & Analysis, and I have focused my training on building practical web applications with JavaScript, React.js, Node.js, Express.js, MongoDB, and REST APIs.\n\nMy most significant project to date is DriveTree, a full-stack driving mentor platform developed as a capstone with a four-member Agile team. We used React.js and Node.js with Express and MongoDB to support instructor discovery, booking workflows, profile management, and verification processes. Working in that environment taught me how to break down requirements, communicate clearly during development, and deliver features iteratively while keeping the codebase organized and testable.\n\nAlongside my technical work, I bring leadership experience from roles in Canada and the United Arab Emirates. As a warehouse team lead and team supervisor, I coordinated daily operations, trained new staff, and worked across departments to keep workflows running smoothly. That background has helped me stay dependable in group projects, ask clear questions during code reviews, and approach problems with a calm, structured mindset.\n\nI have also worked with Docker, Jenkins, Microsoft Azure, and GitHub through hands-on labs and project work. I am looking for an opportunity to grow as a Junior Software Developer, Full-Stack Developer, QA Analyst, or in Application Support or IT Support, where I can contribute while continuing to build depth in production-style development.\n\nThank you for considering my application. I would appreciate the chance to discuss how my education, project experience, and work background align with your needs. My portfolio and GitHub repositories are available for your review, and I am happy to walk through my work in more detail at your convenience.\n\nSincerely,\nHeemal Syangbo\nToronto, Ontario',
+    id: 'github',
+    title: 'GitHub Profile',
+    description: 'Explore source code, project repositories, and technical work.',
+    icon: 'github',
+    action: 'external',
+    href: personal.github,
     featured: false,
   },
   {
-    id: 'philosophy',
-    title: 'Professional Goals',
-    description: 'Career development, technical growth, and long-term professional objectives.',
-    icon: 'sparkles',
-    action: 'modal',
-    modalContent:
-      'My objective is to start my software career in a junior-level role where I can apply strong academic and project experience while learning from experienced developers on a real team. I graduated in April 2026 with an Advanced Diploma in Computer Programming & Analysis from George Brown College, and I am pursuing opportunities as a Junior Software Developer, Full-Stack Developer, QA Analyst, or in Application Support and IT Support.\n\nMy technical focus is full-stack web development with React.js, Node.js, Express.js, MongoDB, JavaScript, TypeScript, and REST APIs. DriveTree, my completed capstone, reinforced how I work in Agile delivery—integrating frontend and backend systems, collaborating across a four-person team, and shipping features with clear requirements and deadlines. I have also built practical familiarity with Docker, Jenkins, Microsoft Azure, and GitHub through labs and project work.\n\nI intend to keep advancing through hands-on contribution, feedback, and structured learning in a professional environment. Leadership experience in Canada and the UAE strengthened my communication, reliability, and ability to coordinate work across teams—skills I apply in technical collaboration today. I am seeking a workplace where I can add value early while developing into a dependable full-stack developer over time.',
+    id: 'linkedin',
+    title: 'LinkedIn Profile',
+    description: 'Professional background, experience, and networking profile.',
+    icon: 'linkedin',
+    action: 'external',
+    href: personal.linkedin,
     featured: false,
   },
 ]

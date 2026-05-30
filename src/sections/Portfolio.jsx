@@ -6,8 +6,8 @@ import {
   ExternalLink,
   FileText,
   FolderOpen,
-  Mail,
-  Sparkles,
+  Github,
+  Linkedin,
   Trophy,
   User,
 } from 'lucide-react'
@@ -24,8 +24,8 @@ import {
 const documentIcons = {
   user: User,
   'file-text': FileText,
-  mail: Mail,
-  sparkles: Sparkles,
+  github: Github,
+  linkedin: Linkedin,
   award: Award,
   brain: Brain,
   folder: FolderOpen,
@@ -45,9 +45,9 @@ export function Portfolio() {
   const openModal = (title, body) => setModal({ open: true, title, body })
   const closeModal = () => setModal((m) => ({ ...m, open: false }))
 
-  const renderDocumentAction = (item, emphasized = false) => {
+  const renderDocumentAction = (item) => {
     const baseBtn =
-      'mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full px-3 py-2 text-xs font-semibold transition'
+      'inline-flex w-full items-center justify-center gap-2 rounded-full px-3 py-2 text-xs font-semibold transition'
     const primaryBtn = `${baseBtn} border border-emerald-500/30 bg-emerald-500/10 text-emerald-200 hover:bg-emerald-500/20`
     const secondaryBtn = `${baseBtn} border border-white/10 bg-white/[0.05] text-zinc-300 hover:bg-white/[0.09]`
 
@@ -56,23 +56,24 @@ export function Portfolio() {
         <button
           type="button"
           onClick={() => openModal(item.title, item.modalContent)}
-          className={emphasized ? primaryBtn : secondaryBtn}
+          className={secondaryBtn}
         >
           Read
         </button>
       )
     }
 
-    if (item.action === 'capstone') {
+    if (item.action === 'external') {
       return (
-        <button
-          type="button"
-          onClick={() => setCapstoneOpen(true)}
-          className={emphasized ? primaryBtn : secondaryBtn}
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noreferrer noopener"
+          className={secondaryBtn}
         >
-          <FolderOpen className="h-3.5 w-3.5" aria-hidden />
-          Browse PDFs
-        </button>
+          <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+          View Profile
+        </a>
       )
     }
 
@@ -81,7 +82,7 @@ export function Portfolio() {
         href={item.href}
         target="_blank"
         rel="noreferrer noopener"
-        className={emphasized ? primaryBtn : secondaryBtn}
+        className={primaryBtn}
       >
         <ExternalLink className="h-3.5 w-3.5" aria-hidden />
         View PDF
@@ -89,7 +90,7 @@ export function Portfolio() {
     )
   }
 
-  const renderDocumentCard = (item, i, emphasized = false) => {
+  const renderDocumentCard = (item, i) => {
     const Icon = documentIcons[item.icon] || FileText
 
     return (
@@ -99,19 +100,12 @@ export function Portfolio() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: i * 0.04 }}
-        className={`glass-panel flex h-full flex-col p-5 ${
-          emphasized ? 'ring-1 ring-emerald-500/20' : 'opacity-90'
-        }`}
+        className="glass-panel flex h-full min-h-[11.5rem] flex-col p-5 ring-1 ring-white/[0.06] transition hover:border-white/12 hover:bg-white/[0.03]"
       >
-        <Icon
-          className={`mb-3 h-6 w-6 ${emphasized ? 'text-emerald-300' : 'text-purple-300/80'}`}
-          strokeWidth={1.6}
-        />
-        <h4 className={`font-semibold ${emphasized ? 'text-white' : 'text-zinc-200'}`}>
-          {item.title}
-        </h4>
+        <Icon className="mb-3 h-6 w-6 text-emerald-300" strokeWidth={1.6} />
+        <h4 className="font-semibold text-white">{item.title}</h4>
         <p className="mt-2 flex-1 text-xs leading-relaxed text-zinc-400">{item.description}</p>
-        {renderDocumentAction(item, emphasized)}
+        <div className="mt-auto pt-4">{renderDocumentAction(item)}</div>
       </motion.article>
     )
   }
@@ -120,7 +114,7 @@ export function Portfolio() {
     <section id="portfolio" className="section-pad relative z-10 scroll-mt-24">
       <SectionHeading
         title="Portfolio"
-        subtitle="Résumé, credentials, and capstone documentation—prioritized for recruiter review."
+        subtitle="Résumé, credentials, GitHub, LinkedIn, and DriveTree capstone documentation—prioritized for recruiter review."
       />
 
       <div className="mx-auto mt-14 max-w-6xl space-y-16">
@@ -129,19 +123,22 @@ export function Portfolio() {
             Featured documents
           </h3>
           <p className="mx-auto mb-8 max-w-2xl text-center text-sm leading-relaxed text-zinc-400">
-            Key materials for hiring review—résumé, recognition, and DriveTree capstone work.
+            Essential hiring materials—résumé and official academic credentials.
           </p>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {featuredDocuments.map((item, i) => renderDocumentCard(item, i, true))}
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {featuredDocuments.map((item, i) => renderDocumentCard(item, i))}
           </div>
         </div>
 
         <div>
-          <h3 className="mb-2 text-center text-xs font-semibold uppercase tracking-[0.2em] text-zinc-600">
+          <h3 className="mb-2 text-center text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
             Additional resources
           </h3>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {supplementalMaterials.map((item, i) => renderDocumentCard(item, i, false))}
+          <p className="mx-auto mb-8 max-w-2xl text-center text-sm leading-relaxed text-zinc-400">
+            Professional summary and direct links recruiters review most often.
+          </p>
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {supplementalMaterials.map((item, i) => renderDocumentCard(item, i))}
           </div>
         </div>
 
@@ -207,11 +204,12 @@ export function Portfolio() {
         </div>
 
         <div>
-          <h3 className="mb-2 text-center text-xs font-semibold uppercase tracking-[0.2em] text-zinc-600">
-            Full capstone library
+          <h3 className="mb-2 text-center text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+            DriveTree capstone library
           </h3>
-          <p className="mx-auto mb-8 max-w-xl text-center text-sm leading-relaxed text-zinc-500">
-            DriveTree (team T06) — all formal artifacts from proposal through reports.
+          <p className="mx-auto mb-8 max-w-xl text-center text-sm leading-relaxed text-zinc-400">
+            Single location for all DriveTree (team T06) project documents—from proposal through
+            final reports.
           </p>
           <div className="flex justify-center">
             <motion.button
