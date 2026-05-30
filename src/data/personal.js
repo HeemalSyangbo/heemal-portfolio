@@ -24,13 +24,13 @@ export const personal = {
   heroIntro:
     'George Brown College graduate building web applications with React.js, Node.js, JavaScript, REST APIs, and MongoDB. Hands-on experience through full-stack projects, a completed DriveTree capstone, and DevOps tooling in lab environments. Open to junior software developer, full-stack, QA, and application support roles in the GTA.',
 
-  heroPills: ['React.js', 'Node.js', 'REST APIs', 'MongoDB'],
+  heroPills: ['React.js', 'Node.js', 'REST APIs', 'MongoDB', 'Angular', 'TypeScript'],
 
   /**
    * About section — two concise paragraphs (no duplication with Portfolio modals).
    */
   aboutParagraphs: [
-    `I am a Computer Programming & Analysis graduate from George Brown College (April 2026) with a focus on frontend and full-stack web development. I build applications with React.js, Node.js, Express.js, MongoDB, and REST APIs, including DriveTree, my completed capstone—a full-stack platform connecting learners with verified driving instructors. I have also worked with Docker, Jenkins, Microsoft Azure, SonarQube, and GitHub through hands-on labs.`,
+    `I am a Computer Programming & Analysis graduate from George Brown College (April 2026) with a focus on frontend and full-stack web development. I build applications with React.js, Node.js, Express.js, MongoDB, REST APIs, Angular, and TypeScript, including DriveTree, my completed capstone—a full-stack platform connecting learners with verified driving instructors. I have also worked with Docker, Jenkins, Microsoft Azure, SonarQube, and GitHub through hands-on labs.`,
     `Before software development, I held leadership and operational roles in Canada and the UAE—coordinating teams, improving workflows, training staff, and communicating across departments. That experience strengthens how I collaborate on technical projects. I am actively seeking junior software developer opportunities where I can contribute, learn, and grow.`,
   ],
 

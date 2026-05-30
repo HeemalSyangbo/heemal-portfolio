@@ -14,7 +14,7 @@ const cards = [
   },
   {
     title: 'GitHub',
-    subtitle: 'View my code',
+    subtitle: 'View GitHub Projects',
     href: personal.github,
     className: 'from-zinc-800 to-zinc-900',
     icon: Github,
@@ -44,7 +44,7 @@ export function Contact() {
       <SectionHeading
         gradient={false}
         title="Contact"
-        subtitle="Open to junior software developer, full-stack, QA analyst, application support, and IT support roles in the GTA or remote."
+        subtitle="Available for Junior Software Developer, Frontend Developer, Full-Stack Developer, QA Analyst, Application Support, and IT Support opportunities across Canada."
       />
 
       <motion.div

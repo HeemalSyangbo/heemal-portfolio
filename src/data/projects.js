@@ -16,8 +16,8 @@ export const projects = [
     imageAlt: 'Driving and road theme — DriveTree capstone project',
     tech: ['React.js', 'Node.js', 'REST APIs', 'MongoDB', 'Team collaboration', 'Full-stack architecture'],
     links: {
-      cta: { href: '#contact', label: 'Discuss this project' },
-      github: GH,
+      liveDemo: { href: 'https://drivetree.ca', label: '🌐 Live Demo' },
+      github: 'https://github.com/HeemalSyangbo/DriveTree',
     },
     gradientTitle: false,
   },
