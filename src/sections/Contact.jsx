@@ -55,9 +55,12 @@ export function Contact() {
         className="mx-auto mt-12 max-w-4xl"
       >
         <div className="glass-panel p-6 sm:p-8">
-          <p className="mb-6 text-center text-sm leading-relaxed text-zinc-300 sm:text-base">
+          <p className="mb-2 text-center text-sm leading-relaxed text-zinc-300 sm:text-base">
             Available for Junior Software Developer, Full-Stack Developer, Frontend Developer, QA
             Analyst, Application Support, and IT Support opportunities across Canada.
+          </p>
+          <p className="mb-6 text-center text-xs text-zinc-500">
+            Available across Canada for full-time opportunities.
           </p>
           <div className="grid gap-4 sm:grid-cols-2">
             {cards.map((c) => (

@@ -54,7 +54,20 @@ export function Hero() {
         <p className="mt-3 text-sm font-medium tracking-wide text-emerald-300/90">
           {personal.heroStatus}
         </p>
-        <p className="mt-2 text-sm text-zinc-500">{personal.location}</p>
+        <div className="mx-auto mt-4 max-w-sm text-left">
+          <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500">Open to:</p>
+          <ul className="mt-2 space-y-1">
+            {personal.heroOpenRoles.map((role) => (
+              <li key={role} className="flex items-center gap-2 text-sm text-zinc-300">
+                <span className="text-zinc-500" aria-hidden>
+                  •
+                </span>
+                {role}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <p className="mt-4 text-sm text-zinc-500">{personal.location}</p>
 
         <p className="mt-5 text-sm font-medium tracking-wide text-zinc-300 sm:text-base">
           {personal.heroTechStack}

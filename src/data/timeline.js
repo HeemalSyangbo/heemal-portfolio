@@ -24,8 +24,12 @@ export const timeline = [
     title: 'Warehouse Associate / Team Lead',
     org: 'Richelieu Hardware Ltd — Toronto, ON',
     date: 'Aug 2021 – Aug 2023',
-    description:
-      'Led daily warehouse operations and coordinated team priorities to meet deadlines. Trained new employees, improved workflow communication across departments, and maintained safety and quality standards—building leadership, process improvement, and team coordination skills used in software projects today.',
+    highlights: [
+      'Led daily warehouse operations and coordinated team priorities.',
+      'Trained and onboarded new employees.',
+      'Maintained workflow efficiency and safety standards.',
+      'Improved communication across departments.',
+    ],
     accent: 'from-amber-400 to-orange-500',
     icon: 'briefcase',
   },
@@ -34,8 +38,12 @@ export const timeline = [
     title: 'Team Supervisor — Education & Operations',
     org: 'The Arbor School · Hamdan University · Dubai University — Dubai, UAE',
     date: 'Aug 2016 – Nov 2020',
-    description:
-      'Supervised staff, managed scheduling, and oversaw daily operations across education environments. Resolved operational issues, coordinated cross-department communication, and maintained structured workflows—strengthening problem-solving, accountability, and leadership transferable to collaborative technical teams.',
+    highlights: [
+      'Supervised staff across educational and operational departments.',
+      'Managed scheduling and daily operations.',
+      'Coordinated cross-functional teams and resolved operational issues.',
+      'Strengthened leadership, communication, and problem-solving skills.',
+    ],
     accent: 'from-purple-500 to-pink-500',
     icon: 'briefcase',
   },

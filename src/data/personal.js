@@ -26,6 +26,13 @@ export const personal = {
 
   heroTechStack: 'React.js • Node.js • TypeScript • MongoDB • REST APIs',
   heroStatus: 'Actively Seeking Full-Time Opportunities',
+  heroOpenRoles: [
+    'Junior Software Developer',
+    'Full-Stack Developer',
+    'QA Analyst',
+    'Application Support',
+    'IT Support',
+  ],
 
   /** About section — scannable summary (Portfolio modal uses extendedProfile). */
   aboutSubtitle:

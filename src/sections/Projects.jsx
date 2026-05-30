@@ -25,7 +25,11 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ delay: index * 0.05, duration: 0.45 }}
-            className="group glass-panel overflow-hidden"
+            className={`group glass-panel overflow-hidden ${
+              project.featured
+                ? 'md:col-span-2 ring-1 ring-amber-400/30 shadow-lg shadow-amber-500/5'
+                : ''
+            }`}
           >
             <div className="relative aspect-[16/10] overflow-hidden">
               <img
@@ -52,13 +56,21 @@ export function Projects() {
               <span className="absolute right-6 top-6 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] text-xs font-semibold text-zinc-300">
                 {project.number}
               </span>
+              {project.badge ? (
+                <span className="mb-2 inline-block rounded-full border border-amber-400/30 bg-amber-500/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-200">
+                  {project.badge}
+                </span>
+              ) : null}
               <h3
-                className={`pr-12 text-xl font-bold ${
-                  project.gradientTitle ? 'text-gradient' : 'text-white'
+                className={`pr-12 text-xl font-bold sm:text-2xl ${
+                  project.featured || project.gradientTitle ? 'text-gradient' : 'text-white'
                 }`}
               >
                 {project.title}
               </h3>
+              {project.teamNote ? (
+                <p className="mt-1 text-xs font-medium text-zinc-500">{project.teamNote}</p>
+              ) : null}
               <p className="mt-3 text-sm leading-relaxed text-zinc-400">{project.description}</p>
 
               <div className="mt-4 flex flex-wrap gap-2">

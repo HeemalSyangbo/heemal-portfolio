@@ -46,7 +46,21 @@ export function Experience() {
                   <p className={`mt-2 text-sm font-semibold bg-gradient-to-r ${entry.accent} bg-clip-text text-transparent`}>
                     {entry.date}
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-zinc-400">{entry.description}</p>
+                  {entry.highlights ? (
+                    <ul className="mt-3 space-y-2">
+                      {entry.highlights.map((point) => (
+                        <li
+                          key={point}
+                          className="flex gap-2 text-sm leading-relaxed text-zinc-400"
+                        >
+                          <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-zinc-500" aria-hidden />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="mt-3 text-sm leading-relaxed text-zinc-400">{entry.description}</p>
+                  )}
                 </article>
               </motion.li>
             )

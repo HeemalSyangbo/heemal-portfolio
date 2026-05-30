@@ -10,6 +10,7 @@ import { Experience } from './sections/Experience'
 import { Hero } from './sections/Hero'
 import { Portfolio } from './sections/Portfolio'
 import { Projects } from './sections/Projects'
+import { RecruiterHighlights } from './sections/RecruiterHighlights'
 import { Skills } from './sections/Skills'
 
 const SECTION_IDS = ['hero', 'about', 'skills', 'projects', 'experience', 'portfolio', 'contact']
@@ -32,6 +33,7 @@ export default function App() {
         <Hero />
         <About />
         <Skills />
+        <RecruiterHighlights />
         <Projects />
         <Experience />
         <Portfolio />

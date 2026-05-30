@@ -8,7 +8,10 @@ export const projects = [
   {
     id: 'drivetree',
     number: '01',
-    title: 'DriveTree — Capstone Project',
+    featured: true,
+    badge: '⭐ FEATURED PROJECT',
+    title: 'DriveTree — Driving Mentor Platform',
+    teamNote: 'Built by a 4-member Agile team',
     description:
       'Full-stack platform connecting learners with verified driving instructors. Built using React, Node.js, Express.js, and MongoDB. Delivered as a 4-member capstone project featuring instructor discovery, booking workflows, profile management, and verification processes.',
     image:
