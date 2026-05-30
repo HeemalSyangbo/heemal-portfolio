@@ -63,8 +63,8 @@ export const supplementalMaterials = [
   },
   {
     id: 'philosophy',
-    title: 'Career Goals',
-    description: 'Professional direction, technical focus, and roles I am pursuing.',
+    title: 'Professional Goals',
+    description: 'Career development, technical growth, and long-term professional objectives.',
     icon: 'sparkles',
     action: 'modal',
     modalContent:
