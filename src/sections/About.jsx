@@ -1,32 +1,53 @@
 import { motion } from 'framer-motion'
-import { BookOpen, Code2, Layers, Users } from 'lucide-react'
+import { Briefcase, Code2, GraduationCap, Layers } from 'lucide-react'
 import { SectionHeading } from '../components/SectionHeading'
 import { personal } from '../data/personal'
 
-const stats = [
+const highlightCards = [
   {
-    title: 'Key projects',
-    detail: 'Full-stack apps & completed capstone',
+    id: 'education',
+    title: 'Education',
+    icon: GraduationCap,
+    accent: 'from-emerald-500/25 to-teal-600/10 ring-emerald-400/25',
+    iconClass: 'text-emerald-300',
+    lines: [
+      { text: 'George Brown College', emphasis: true },
+      { text: 'Computer Programming & Analysis' },
+      { text: 'Graduated April 2026', muted: true },
+    ],
+  },
+  {
+    id: 'capstone',
+    title: 'DriveTree Capstone',
     icon: Code2,
-    className: 'from-blue-600/30 to-blue-500/10 ring-blue-500/20',
+    accent: 'from-blue-600/30 to-indigo-500/10 ring-blue-500/25',
+    iconClass: 'text-blue-300',
+    lines: [
+      { text: 'Full-stack team project', emphasis: true },
+      { text: 'React • Node.js • MongoDB • REST APIs' },
+      { text: 'Completed April 2026', muted: true },
+    ],
   },
   {
-    title: 'Stack focus',
-    detail: 'JavaScript, React.js, Node.js, REST, MongoDB',
+    id: 'stack',
+    title: 'Technical Stack',
     icon: Layers,
-    className: 'from-purple-600/30 to-purple-500/10 ring-purple-500/20',
+    accent: 'from-purple-600/30 to-fuchsia-500/10 ring-purple-500/25',
+    iconClass: 'text-purple-300',
+    tags: ['React.js', 'Node.js', 'MongoDB', 'REST APIs', 'JavaScript', 'TypeScript'],
   },
   {
-    title: 'Credentials',
-    detail: 'Diploma, certificates & capstone docs',
-    icon: BookOpen,
-    className: 'from-orange-500/25 to-amber-500/10 ring-orange-400/20',
-  },
-  {
-    title: 'Collaboration',
-    detail: 'Agile teams & prior leadership roles',
-    icon: Users,
-    className: 'from-emerald-500/25 to-teal-500/10 ring-emerald-400/25',
+    id: 'leadership',
+    title: 'Leadership Experience',
+    icon: Briefcase,
+    accent: 'from-amber-500/25 to-orange-500/10 ring-amber-400/25',
+    iconClass: 'text-amber-300',
+    lines: [
+      { text: '7+ years leadership experience', emphasis: true },
+      { text: 'Canada & UAE' },
+      { text: 'Team supervision' },
+      { text: 'Operations management', muted: true },
+    ],
   },
 ]
 
@@ -34,13 +55,60 @@ const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.08 },
+    transition: { staggerChildren: 0.07 },
   },
 }
 
 const item = {
-  hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 14 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+}
+
+function HighlightCard({ card }) {
+  const Icon = card.icon
+
+  return (
+    <motion.article
+      variants={item}
+      className={`group glass-panel relative flex h-full min-h-[11.5rem] flex-col overflow-hidden bg-gradient-to-br p-5 ring-1 transition duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-lg hover:shadow-black/20 ${card.accent}`}
+    >
+      <span
+        className={`mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-black/25 ring-1 ring-white/10 transition group-hover:scale-105 ${card.iconClass}`}
+      >
+        <Icon className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+      </span>
+      <h3 className="text-sm font-semibold uppercase tracking-wide text-white">{card.title}</h3>
+
+      {card.tags ? (
+        <ul className="mt-3 flex flex-1 flex-wrap content-start gap-1.5">
+          {card.tags.map((tag) => (
+            <li key={tag}>
+              <span className="inline-block rounded-full border border-white/10 bg-black/20 px-2.5 py-1 text-[11px] font-medium text-zinc-200">
+                {tag}
+              </span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <ul className="mt-3 flex flex-1 flex-col justify-end gap-1.5">
+          {card.lines.map((line) => (
+            <li
+              key={line.text}
+              className={`text-sm leading-snug ${
+                line.emphasis
+                  ? 'font-semibold text-zinc-100'
+                  : line.muted
+                    ? 'text-xs text-zinc-500'
+                    : 'text-zinc-400'
+              }`}
+            >
+              {line.text}
+            </li>
+          ))}
+        </ul>
+      )}
+    </motion.article>
+  )
 }
 
 export function About() {
@@ -49,25 +117,30 @@ export function About() {
       <SectionHeading
         gradient={false}
         title="About"
-        subtitle="George Brown College graduate focused on React.js, Node.js, and full-stack delivery—with leadership experience from prior roles."
+        subtitle={personal.aboutSubtitle}
       />
 
-      <div className="mx-auto mt-14 grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-start">
+      <div className="mx-auto mt-14 grid max-w-6xl gap-6 lg:grid-cols-2 lg:items-stretch lg:gap-8">
         <motion.div
           initial={{ opacity: 0, x: -16 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="glass-panel space-y-5 p-8"
+          className="glass-panel group flex h-full flex-col p-6 transition duration-300 hover:border-white/15 hover:shadow-lg hover:shadow-black/20 sm:p-8"
         >
-          <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-            {personal.name} · {personal.location}
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
+            Summary
           </p>
-          {personal.aboutParagraphs.map((paragraph, i) => (
-            <p key={i} className="text-sm leading-relaxed text-zinc-300 sm:text-base">
-              {paragraph}
-            </p>
-          ))}
+          <ul className="flex flex-1 flex-col justify-center gap-4">
+            {personal.aboutParagraphs.map((paragraph, i) => (
+              <li
+                key={i}
+                className="relative pl-4 text-sm leading-relaxed text-zinc-300 before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-gradient-to-br before:from-blue-400 before:to-purple-500 sm:text-[0.9375rem]"
+              >
+                {paragraph}
+              </li>
+            ))}
+          </ul>
         </motion.div>
 
         <motion.div
@@ -75,18 +148,10 @@ export function About() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-80px' }}
-          className="grid grid-cols-2 gap-4"
+          className="grid h-full grid-cols-2 auto-rows-fr gap-4"
         >
-          {stats.map((s) => (
-            <motion.div
-              key={s.title}
-              variants={item}
-              className={`glass-panel relative overflow-hidden bg-gradient-to-br p-5 ring-1 ${s.className}`}
-            >
-              <s.icon className="mb-3 h-6 w-6 text-white/90" strokeWidth={1.75} />
-              <p className="text-sm font-semibold leading-snug text-white">{s.title}</p>
-              <p className="mt-1 text-xs leading-snug text-zinc-500">{s.detail}</p>
-            </motion.div>
+          {highlightCards.map((card) => (
+            <HighlightCard key={card.id} card={card} />
           ))}
         </motion.div>
       </div>

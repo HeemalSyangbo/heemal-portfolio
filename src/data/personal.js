@@ -26,12 +26,15 @@ export const personal = {
 
   heroPills: ['React.js', 'Node.js', 'REST APIs', 'MongoDB', 'Angular', 'TypeScript'],
 
-  /**
-   * About section — two concise paragraphs (no duplication with Portfolio modals).
-   */
+  /** About section — scannable summary (Portfolio modal uses extendedProfile). */
+  aboutSubtitle:
+    'George Brown College graduate focused on React.js, Node.js, and full-stack web development, backed by leadership experience in Canada and the UAE.',
+
   aboutParagraphs: [
-    `I am a Computer Programming & Analysis graduate from George Brown College (April 2026) with a focus on frontend and full-stack web development. I build applications with React.js, Node.js, Express.js, MongoDB, REST APIs, Angular, and TypeScript, including DriveTree, my completed capstone—a full-stack platform connecting learners with verified driving instructors. I have also worked with Docker, Jenkins, Microsoft Azure, SonarQube, and GitHub through hands-on labs.`,
-    `Before software development, I held leadership and operational roles in Canada and the UAE—coordinating teams, improving workflows, training staff, and communicating across departments. That experience strengthens how I collaborate on technical projects. I am actively seeking junior software developer opportunities where I can contribute, learn, and grow.`,
+    'Computer Programming & Analysis graduate from George Brown College (April 2026) focused on React.js, Node.js, REST APIs, MongoDB, and full-stack development.',
+    'Completed DriveTree, a full-stack capstone project connecting learners with verified driving instructors using React, Node.js, MongoDB, and REST APIs.',
+    'Prior leadership experience in Canada and the UAE strengthened communication, teamwork, problem-solving, and project coordination skills.',
+    'Currently seeking Junior Software Developer, Full-Stack Developer, Frontend Developer, QA Analyst, and Application Support opportunities.',
   ],
 
   /**
