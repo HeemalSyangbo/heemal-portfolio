@@ -64,11 +64,11 @@ export const supplementalMaterials = [
   {
     id: 'philosophy',
     title: 'Career Goals',
-    description: 'Professional development focus and growth areas.',
+    description: 'Professional direction, technical focus, and roles I am pursuing.',
     icon: 'sparkles',
     action: 'modal',
     modalContent:
-      'I aim to write clean, maintainable code and grow through mentorship and hands-on delivery on real teams. Near term: contribute as a junior software developer, QA analyst, or application support specialist while building depth in React, Node.js, and REST APIs. Long term: expand full-stack and cloud skills through production experience and continuous learning.',
+      'My objective is to start my software career in a junior-level role where I can apply strong academic and project experience while learning from experienced developers on a real team. I graduated in April 2026 with an Advanced Diploma in Computer Programming & Analysis from George Brown College, and I am pursuing opportunities as a Junior Software Developer, Full-Stack Developer, QA Analyst, or in Application Support and IT Support.\n\nMy technical focus is full-stack web development with React.js, Node.js, Express.js, MongoDB, JavaScript, TypeScript, and REST APIs. DriveTree, my completed capstone, reinforced how I work in Agile delivery—integrating frontend and backend systems, collaborating across a four-person team, and shipping features with clear requirements and deadlines. I have also built practical familiarity with Docker, Jenkins, Microsoft Azure, and GitHub through labs and project work.\n\nI intend to keep advancing through hands-on contribution, feedback, and structured learning in a professional environment. Leadership experience in Canada and the UAE strengthened my communication, reliability, and ability to coordinate work across teams—skills I apply in technical collaboration today. I am seeking a workplace where I can add value early while developing into a dependable full-stack developer over time.',
     featured: false,
   },
 ]
