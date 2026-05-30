@@ -9,7 +9,7 @@ export const projects = [
     id: 'drivetree',
     number: '01',
     featured: true,
-    badge: 'Featured Project',
+    titleBadges: ['Featured Project', 'Capstone Project', '2026'],
     title: 'DriveTree — Full-Stack Driving Instructor Booking Platform',
     teamNote: 'Built by a 4-member Agile team',
     description:

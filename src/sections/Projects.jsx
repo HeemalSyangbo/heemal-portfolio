@@ -93,16 +93,17 @@ function ProjectScreenshotGallery({ project }) {
   }
 
   return (
-    <div className="border-b border-white/[0.06] bg-[#0a0a0c]">
-      <div className="relative h-48 sm:h-56 md:h-64">
+    <div className="overflow-hidden rounded-t-2xl">
+      <div className="relative h-[350px] w-full sm:h-[420px] lg:h-[480px] lg:max-h-[500px]">
         <img
           key={current.src}
           src={current.src}
           alt={current.alt ?? project.title}
-          className="h-full w-full object-contain object-center p-3 sm:p-4"
+          className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.01]"
           loading="lazy"
           decoding="async"
         />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/50 to-transparent" />
         {hasMultiple ? (
           <>
             <button
@@ -123,12 +124,9 @@ function ProjectScreenshotGallery({ project }) {
             </button>
           </>
         ) : null}
-        <span className="absolute bottom-3 left-3 rounded-full border border-white/10 bg-black/50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-zinc-200 backdrop-blur-sm">
-          {current.label ?? 'Application'}
-        </span>
       </div>
       {hasMultiple ? (
-        <div className="flex flex-wrap gap-2 border-t border-white/[0.06] bg-black/20 px-3 py-2.5 sm:px-4">
+        <div className="flex flex-wrap gap-2 border-t border-white/[0.06] bg-black/30 px-4 py-2.5">
           {slides.map((slide, index) => (
             <button
               key={slide.id ?? slide.label}
@@ -137,7 +135,7 @@ function ProjectScreenshotGallery({ project }) {
               aria-pressed={active === index}
               className={`rounded-full px-3 py-1 text-[11px] font-medium transition ${
                 active === index
-                  ? 'bg-purple-500/20 text-purple-200 ring-1 ring-purple-400/40'
+                  ? 'bg-amber-500/15 text-amber-200 ring-1 ring-amber-400/40'
                   : 'text-zinc-500 hover:bg-white/[0.05] hover:text-zinc-300'
               }`}
             >
@@ -157,17 +155,24 @@ function FeaturedProjectCard({ project }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.45 }}
-      className="group glass-panel overflow-hidden ring-1 ring-purple-500/35 shadow-lg shadow-purple-500/10 transition duration-300 hover:-translate-y-0.5 hover:ring-amber-400/40 hover:shadow-xl hover:shadow-purple-500/15"
+      className="group glass-panel overflow-hidden rounded-2xl ring-1 ring-amber-400/35 shadow-lg shadow-amber-500/10 transition duration-300 hover:-translate-y-0.5 hover:ring-amber-400/55 hover:shadow-xl hover:shadow-amber-500/15"
     >
       <ProjectScreenshotGallery project={project} />
 
       <div className="p-5 sm:p-6 lg:p-7">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="min-w-0 flex-1">
-            {project.badge ? (
-              <span className="mb-2 inline-block rounded-full border border-amber-400/35 bg-gradient-to-r from-amber-500/15 to-purple-500/15 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-200">
-                ⭐ {project.badge}
-              </span>
+            {project.titleBadges?.length ? (
+              <div className="mb-3 flex flex-wrap gap-2">
+                {project.titleBadges.map((label) => (
+                  <span
+                    key={label}
+                    className="inline-block rounded-full border border-amber-400/30 bg-amber-500/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-200"
+                  >
+                    {label}
+                  </span>
+                ))}
+              </div>
             ) : null}
             <h3 className="text-xl font-bold text-gradient sm:text-2xl">{project.title}</h3>
             {project.teamNote ? (
