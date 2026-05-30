@@ -51,15 +51,14 @@ export function Hero() {
         <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
           <span className="text-gradient">{personal.name}</span>
         </h1>
+        <p className="mt-3 text-sm font-medium tracking-wide text-emerald-300/90">
+          {personal.heroStatus}
+        </p>
         <p className="mt-2 text-sm text-zinc-500">{personal.location}</p>
 
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
-          {personal.heroPills.map((p) => (
-            <span key={p} className="glass-pill px-3 py-1 text-xs font-medium text-zinc-300">
-              {p}
-            </span>
-          ))}
-        </div>
+        <p className="mt-5 text-sm font-medium tracking-wide text-zinc-300 sm:text-base">
+          {personal.heroTechStack}
+        </p>
 
         <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-zinc-300 sm:text-base">
           {personal.heroIntro}

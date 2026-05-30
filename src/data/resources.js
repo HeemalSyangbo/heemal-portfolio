@@ -1,56 +1,75 @@
 import { personal } from './personal'
 
 /**
- * Portfolio section: career materials + achievements + capstone PDFs.
+ * Portfolio section: recruiter-first documents, then supplemental materials.
  */
-export const resourceCategories = [
+export const featuredDocuments = [
   {
-    id: 'core',
-    title: 'Career & application materials',
-    items: [
-      {
-        id: 'resume',
-        title: 'Résumé',
-        description: 'View my résumé in the browser—download from the PDF viewer when needed.',
-        icon: 'file-text',
-        action: 'view',
-        href: '/documents/resume.pdf',
-      },
-      {
-        id: 'profile',
-        title: 'About Me',
-        description: 'Background, projects, and what I bring to junior software roles.',
-        icon: 'user',
-        action: 'modal',
-        modalContent: personal.extendedProfile,
-      },
-      {
-        id: 'cover',
-        title: 'Sample Cover Letter',
-        description: 'A practical structure for junior developer and IT support applications.',
-        icon: 'mail',
-        action: 'modal',
-        modalContent:
-          'Opening — State the role and company clearly.\n\nFit — Highlight your Computer Programming & Analysis diploma, React.js/Node.js stack, and one concrete project (DriveTree capstone or MERN employee management system).\n\nProof — Share one specific example: team delivery, API integration, testing, or a technical problem you solved.\n\nClose — Link to this portfolio and GitHub and invite a brief conversation.\n\nExport to PDF from Google Docs or Word when you apply.',
-      },
-      {
-        id: 'philosophy',
-        title: 'Career Goals',
-        description: 'Where I am headed as a developer and what I want to learn next.',
-        icon: 'sparkles',
-        action: 'modal',
-        modalContent:
-          'I aim to write clean, maintainable code and grow through mentorship and hands-on delivery on real teams. Near term: contribute as a junior software developer, QA analyst, or application support specialist while building depth in React, Node.js, and REST APIs. Long term: expand full-stack and cloud skills through production experience and continuous learning.',
-      },
-      {
-        id: 'certs-awards',
-        title: 'Certificates & recognition',
-        description: 'Official certificates and academic recognition—view PDFs in the credentials section.',
-        icon: 'award',
-        action: 'anchor',
-        href: '#achievements',
-      },
-    ],
+    id: 'resume',
+    title: 'Résumé',
+    description: 'Professional résumé—view online or download from the PDF viewer.',
+    icon: 'file-text',
+    action: 'view',
+    href: '/documents/resume.pdf',
+    featured: true,
+  },
+  {
+    id: 'dean-letter',
+    title: "Dean's Letter",
+    description: 'Official academic recognition from George Brown College.',
+    icon: 'award',
+    action: 'view',
+    href: '/documents/dean-letter.pdf',
+    featured: true,
+  },
+  {
+    id: 'ml-cert',
+    title: 'Supervised Machine Learning Certificate',
+    description: 'Course certificate in regression and classification.',
+    icon: 'brain',
+    action: 'view',
+    href: '/documents/supervised-ml-regression-classification.pdf',
+    featured: true,
+  },
+  {
+    id: 'drivetree-docs',
+    title: 'DriveTree Documentation',
+    description: 'Capstone artifacts—proposal, design, requirements, and reports.',
+    icon: 'folder',
+    action: 'capstone',
+    featured: true,
+  },
+]
+
+export const supplementalMaterials = [
+  {
+    id: 'profile',
+    title: 'About Me',
+    description: 'Extended background for applications and LinkedIn.',
+    icon: 'user',
+    action: 'modal',
+    modalContent: personal.extendedProfile,
+    featured: false,
+  },
+  {
+    id: 'cover',
+    title: 'Sample Cover Letter',
+    description: 'Outline for tailoring applications to specific roles.',
+    icon: 'mail',
+    action: 'modal',
+    modalContent:
+      'Opening — State the role and company clearly.\n\nFit — Highlight your Computer Programming & Analysis diploma, React.js/Node.js stack, and one concrete project (DriveTree capstone or MERN employee management system).\n\nProof — Share one specific example: team delivery, API integration, testing, or a technical problem you solved.\n\nClose — Link to this portfolio and GitHub and invite a brief conversation.\n\nExport to PDF from Google Docs or Word when you apply.',
+    featured: false,
+  },
+  {
+    id: 'philosophy',
+    title: 'Career Goals',
+    description: 'Professional development focus and growth areas.',
+    icon: 'sparkles',
+    action: 'modal',
+    modalContent:
+      'I aim to write clean, maintainable code and grow through mentorship and hands-on delivery on real teams. Near term: contribute as a junior software developer, QA analyst, or application support specialist while building depth in React, Node.js, and REST APIs. Long term: expand full-stack and cloud skills through production experience and continuous learning.',
+    featured: false,
   },
 ]
 

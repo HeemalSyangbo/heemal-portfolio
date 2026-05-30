@@ -44,7 +44,7 @@ export function Contact() {
       <SectionHeading
         gradient={false}
         title="Contact"
-        subtitle="Available for Junior Software Developer, Frontend Developer, Full-Stack Developer, QA Analyst, Application Support, and IT Support opportunities across Canada."
+        subtitle="Get in touch for opportunities, project discussions, or collaboration."
       />
 
       <motion.div
@@ -55,6 +55,10 @@ export function Contact() {
         className="mx-auto mt-12 max-w-4xl"
       >
         <div className="glass-panel p-6 sm:p-8">
+          <p className="mb-6 text-center text-sm leading-relaxed text-zinc-300 sm:text-base">
+            Available for Junior Software Developer, Full-Stack Developer, Frontend Developer, QA
+            Analyst, Application Support, and IT Support opportunities across Canada.
+          </p>
           <div className="grid gap-4 sm:grid-cols-2">
             {cards.map((c) => (
               <a

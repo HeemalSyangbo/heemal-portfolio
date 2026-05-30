@@ -24,7 +24,8 @@ export const personal = {
   heroIntro:
     'George Brown College graduate building web applications with React.js, Node.js, JavaScript, REST APIs, and MongoDB. Hands-on experience through full-stack projects, a completed DriveTree capstone, and DevOps tooling in lab environments. Open to junior software developer, full-stack, QA, and application support roles in the GTA.',
 
-  heroPills: ['React.js', 'Node.js', 'REST APIs', 'MongoDB', 'Angular', 'TypeScript'],
+  heroTechStack: 'React.js • Node.js • TypeScript • MongoDB • REST APIs',
+  heroStatus: 'Actively Seeking Full-Time Opportunities',
 
   /** About section — scannable summary (Portfolio modal uses extendedProfile). */
   aboutSubtitle:
