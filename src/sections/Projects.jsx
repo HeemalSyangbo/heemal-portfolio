@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, ExternalLink, Github } from 'lucide-react'
+import { ArrowRight, ChevronLeft, ChevronRight, ExternalLink, Github } from 'lucide-react'
+import { useState } from 'react'
 import { SectionHeading } from '../components/SectionHeading'
 import { projects } from '../data/projects'
 import { personal } from '../data/personal'
@@ -81,6 +82,74 @@ function ProjectActions({ project, compact = false }) {
   )
 }
 
+function ProjectScreenshotGallery({ project }) {
+  const slides = project.gallery?.length ? project.gallery : [{ src: projectImageSrc(project), alt: project.imageAlt, label: 'App' }]
+  const [active, setActive] = useState(0)
+  const current = slides[active]
+  const hasMultiple = slides.length > 1
+
+  const go = (direction) => {
+    setActive((i) => (i + direction + slides.length) % slides.length)
+  }
+
+  return (
+    <div className="border-b border-white/[0.06] bg-[#0a0a0c]">
+      <div className="relative h-48 sm:h-56 md:h-64">
+        <img
+          key={current.src}
+          src={current.src}
+          alt={current.alt ?? project.title}
+          className="h-full w-full object-contain object-center p-3 sm:p-4"
+          loading="lazy"
+          decoding="async"
+        />
+        {hasMultiple ? (
+          <>
+            <button
+              type="button"
+              onClick={() => go(-1)}
+              aria-label="Previous screenshot"
+              className="absolute left-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/60 text-zinc-200 transition hover:bg-black/80"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              onClick={() => go(1)}
+              aria-label="Next screenshot"
+              className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/60 text-zinc-200 transition hover:bg-black/80"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </>
+        ) : null}
+        <span className="absolute bottom-3 left-3 rounded-full border border-white/10 bg-black/50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-zinc-200 backdrop-blur-sm">
+          {current.label ?? 'Application'}
+        </span>
+      </div>
+      {hasMultiple ? (
+        <div className="flex flex-wrap gap-2 border-t border-white/[0.06] bg-black/20 px-3 py-2.5 sm:px-4">
+          {slides.map((slide, index) => (
+            <button
+              key={slide.id ?? slide.label}
+              type="button"
+              onClick={() => setActive(index)}
+              aria-pressed={active === index}
+              className={`rounded-full px-3 py-1 text-[11px] font-medium transition ${
+                active === index
+                  ? 'bg-purple-500/20 text-purple-200 ring-1 ring-purple-400/40'
+                  : 'text-zinc-500 hover:bg-white/[0.05] hover:text-zinc-300'
+              }`}
+            >
+              {slide.label}
+            </button>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  )
+}
+
 function FeaturedProjectCard({ project }) {
   return (
     <motion.article
@@ -88,39 +157,91 @@ function FeaturedProjectCard({ project }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.45 }}
-      className="group glass-panel overflow-hidden ring-1 ring-amber-400/30 shadow-lg shadow-amber-500/5"
+      className="group glass-panel overflow-hidden ring-1 ring-purple-500/35 shadow-lg shadow-purple-500/10 transition duration-300 hover:-translate-y-0.5 hover:ring-amber-400/40 hover:shadow-xl hover:shadow-purple-500/15"
     >
-      <div className="flex flex-col md:flex-row">
-        <ProjectImage
-          project={project}
-          className="h-40 shrink-0 md:h-auto md:w-[38%] md:min-h-[200px] md:max-h-[220px]"
-        />
-        <div className="flex flex-1 flex-col p-4 sm:p-5">
-          {project.badge ? (
-            <span className="mb-2 inline-block w-fit rounded-full border border-amber-400/30 bg-amber-500/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-amber-200">
-              {project.badge}
-            </span>
-          ) : null}
-          <h3 className="text-lg font-bold text-gradient sm:text-xl">{project.title}</h3>
-          {project.teamNote ? (
-            <p className="mt-0.5 text-xs font-medium text-zinc-500">{project.teamNote}</p>
-          ) : null}
-          <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-zinc-400">
-            {project.description}
-          </p>
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            {project.tech.map((t) => (
-              <span
-                key={t}
-                className="rounded-full border border-white/[0.08] bg-white/[0.04] px-2 py-0.5 text-[10px] text-zinc-300"
-              >
-                {t}
+      <ProjectScreenshotGallery project={project} />
+
+      <div className="p-5 sm:p-6 lg:p-7">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="min-w-0 flex-1">
+            {project.badge ? (
+              <span className="mb-2 inline-block rounded-full border border-amber-400/35 bg-gradient-to-r from-amber-500/15 to-purple-500/15 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-200">
+                ⭐ {project.badge}
               </span>
+            ) : null}
+            <h3 className="text-xl font-bold text-gradient sm:text-2xl">{project.title}</h3>
+            {project.teamNote ? (
+              <p className="mt-1 text-xs font-medium text-zinc-500">{project.teamNote}</p>
+            ) : null}
+          </div>
+        </div>
+
+        <p className="mt-3 text-sm leading-relaxed text-zinc-300 sm:text-[0.9375rem]">
+          {project.description}
+        </p>
+
+        {project.stats?.length ? (
+          <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {project.stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-xl border border-white/[0.08] bg-white/[0.03] px-3 py-3 text-center"
+              >
+                <p className="text-sm font-bold text-white sm:text-base">{stat.value}</p>
+                <p className="mt-1 text-[10px] font-medium uppercase tracking-wide text-zinc-500">
+                  {stat.label}
+                </p>
+              </div>
             ))}
           </div>
-          <div className="mt-4 border-t border-white/[0.06] pt-4">
-            <ProjectActions project={project} compact />
-          </div>
+        ) : null}
+
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          {project.highlights?.length ? (
+            <div>
+              <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-purple-300">
+                Project Highlights
+              </h4>
+              <ul className="space-y-2">
+                {project.highlights.map((item) => (
+                  <li key={item} className="flex gap-2 text-sm text-zinc-400">
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-purple-400" aria-hidden />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+          {project.keyContributions?.length ? (
+            <div>
+              <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-amber-300/90">
+                Key Contributions
+              </h4>
+              <ul className="space-y-2">
+                {project.keyContributions.map((item) => (
+                  <li key={item} className="flex gap-2 text-sm text-zinc-400">
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-amber-400/80" aria-hidden />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </div>
+
+        <div className="mt-5 flex flex-wrap gap-1.5">
+          {project.tech.map((t) => (
+            <span
+              key={t}
+              className="rounded-full border border-white/[0.08] bg-white/[0.04] px-2.5 py-1 text-[10px] font-medium text-zinc-300"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-6 border-t border-white/[0.06] pt-5">
+          <ProjectActions project={project} />
         </div>
       </div>
     </motion.article>
